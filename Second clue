@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Archive — Workshop Records</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <h1>Workshop Archive</h1>
+    <p>Records for old family repairs and car maintenance. Search: <em>oldcar2017</em></p>
+
+    <section>
+      <p>File: oldcar2017_report.pdf — (moved to external drive)</p>
+      <p class="small">Private note: reference token is stored below — look for the oddly spaced letters.</p>
+
+      <p class="spaced">o l d c a r 2 0 1 7</p>
+
+      <div class="puzzle">
+        <p>Enter the token (remove spaces) to reveal the next step:</p>
+        <input id="token" placeholder="oldcar2017">
+        <button id="go">Reveal Next Step</button>
+        <p id="hint" class="small"></p>
+      </div>
+    </section>
+
+    <footer><p class="small">Archive system v1.2</p></footer>
+  </main>
+
+<script>
+  const correct = "OLDCAR2017";
+  document.getElementById('go').addEventListener('click', function(){
+    const v = (document.getElementById('token').value || "").trim().toUpperCase();
+    const hint = document.getElementById('hint');
+    if(v === correct){
+      hint.innerHTML = 'Good. Your next step: <strong>final.html</strong> — the question there is personal. Only the correct answer will reveal the password.<br><a href="final.html">Go to Final</a>';
+    } else {
+      hint.textContent = 'Token incorrect. Hint: it was the car year.';
+    }
+  });
+</script>
+
+</body>
+</html>
