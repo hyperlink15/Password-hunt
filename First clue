@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>History Notes — Semester 1</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <h1>World History — Semester Notes</h1>
+    <p>These are just quick class notes. Don't forget to review Chapter 3 before Friday's quiz.</p>
+
+    <section class="notes">
+      <h2>Ancient Civilizations</h2>
+      <p>
+        The Nile was key to Egyptian life. Rivers like the <em>Tigris</em> and <em>Euphrates</em> supported Mesopotamian cities. 
+        Important dates: <strong>1066</strong>, <strong>1215</strong>, and <strong>1776</strong>. 
+        <span class="hidden">cRyp101xol</span> Remember the mnemonic: <span class="mnemonic">Many kings asked little questions, making everyone really curious.</span>
+      </p>
+    </section>
+
+    <section class="notes">
+      <h2>Medieval Europe</h2>
+      <p>
+        Feudal systems created social hierarchies, and guilds controlled trades. The Black Death devastated populations in the 14th century.
+        Note to self: check the "oldcar2017" entry in the archive for workshop dates.
+      </p>
+    </section>
+
+    <div class="puzzle">
+      <p><strong>Teacher Hint:</strong> take the <em>first letters</em> of each sentence in the "mnemonic" above.</p>
+      <label for="code">Enter the code you got from the mnemonic:</label>
+      <input id="code" placeholder="e.g., OLDcar2017">
+      <button id="try">Unlock</button>
+      <p id="msg" class="small"></p>
+    </div>
+
+    <footer>
+      <p class="small">Created: Notes Archive — Do not redistribute.</p>
+    </footer>
+  </main>
+
+<script>
+  const correct = "MKALQMER"; // change to match your mnemonic
+  document.getElementById('try').addEventListener('click', function(){
+    const v = (document.getElementById('code').value || "").trim().toUpperCase();
+    const msg = document.getElementById('msg');
+    if(v === correct){
+      msg.innerHTML = '<a href="clue.html">Code accepted. Click here to continue.</a>';
+    } else {
+      msg.textContent = "Nope — double-check your mnemonic letters.";
+    }
+  });
+</script>
+
+</body>
+</html>
