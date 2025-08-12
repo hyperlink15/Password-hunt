@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Final — Personal Question</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <h1>Personal Log</h1>
+    <p class="small">This entry is locked for security. Answer the question correctly to unlock the content.</p>
+
+    <section class="puzzle">
+      <p><strong>Question:</strong> What did you name your first bike? (case-insensitive)</p>
+      <input id="answer" placeholder="Type the name">
+      <button id="check">Submit</button>
+      <p id="result" class="small"></p>
+      <div id="reveal" style="display:none" class="secret">
+        <h2>Unlocked</h2>
+        <p>Your hidden password is:</p>
+        <pre id="password">YOUR_PASSWORD_HERE</pre>
+      </div>
+    </section>
+
+    <footer><p class="small">Keep this link secret.</p></footer>
+  </main>
+
+<script>
+  const correctAnswer = "spartan"; // change to your bike name
+  document.getElementById('check').addEventListener('click', function(){
+    const v = (document.getElementById('answer').value || "").trim().toLowerCase();
+    const res = document.getElementById('result');
+    if(v === correctAnswer){
+      res.textContent = "Correct. Revealing the secret...";
+      document.getElementById('reveal').style.display = "block";
+    } else {
+      res.textContent = "Incorrect. Think back to your first bike's name.";
+    }
+  });
+</script>
+
+</body>
+</html>
